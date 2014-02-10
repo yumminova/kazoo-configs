@@ -88,21 +88,28 @@
             <!--<param name="require-secure-rtp" value="true"/>-->            
             <!--<param name="auto-jitterbuffer-msec" value="120"/>-->
 
+            <!--  some phones/adapters/softphones allow zrtp/srtp without TLS -->
+            <param name="NDLB-allow-crypto-in-avp" value="true"/>
 
             <!-- TLS -->
-            <!--<param name="tls" value="true"/>
+            <param name="tls" value="true"/>
             <param name="tls-only" value="false"/>
             <param name="tls-bind-params" value="transport=tls"/>
             <param name="tls-sip-port" value="5070"/>
             <param name="tls-version" value="tlsv1"/>
             <param name="tls-bind-params" value="transport=tls"/>
-            <param name="tls-cert-dir" value="$${internal_ssl_dir}"/>
+            <param name="tls-cert-dir" value="/etc/kazoo/freeswitch/certs"/>
             <param name="tls-passphrase" value=""/>
             <param name="tls-verify-date" value="true"/>
             <param name="tls-verify-policy" value="none"/>
             <param name="tls-verify-depth" value="2"/>
             <param name="tls-verify-in-subjects" value=""/>
-            <param name="tls-version" value="$${sip_tls_version}"/>-->
+            <param name="tls-version" value="$${sip_tls_version}"/>
+            
+
+            <!-- WEBSOCKETS -->
+            <param name="ws-binding" value=":8080"/>
+            <param name="wss-binding" value=":8443"/>
 
 
             <!-- DTMF -->

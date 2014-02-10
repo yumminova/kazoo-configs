@@ -38,6 +38,15 @@
 
     <X-PRE-PROCESS cmd="set" data="codecs=G7221@32000h,G7221@16000h,G722,PCMU,PCMA,G729,GSM"/>
 
+<!--
+      Enable ZRTP globally you can override this on a per channel basis     
+      http://wiki.freeswitch.org/wiki/ZRTP (on how to enable zrtp)
+  -->
+    <X-PRE-PROCESS cmd="set" data="rtp_secure_media=false"/>
+    <X-PRE-PROCESS cmd="set" data="zrtp_secure_media=false"/>
+    <X-PRE-PROCESS cmd="set" data="zrtp_enrollment=false"/>
+    
+    
     <section name="configuration" description="Various Configuration">
         <X-PRE-PROCESS cmd="include" data="autoload_configs/*.xml"/>
     </section>
